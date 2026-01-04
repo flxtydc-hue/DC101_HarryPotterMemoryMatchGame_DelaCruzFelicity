@@ -43,14 +43,14 @@ References & Assets
 ---------------------
 This project was developed for educational purposes. Below are the sources for the assets used:
 
-* **Typography:** * fonts sourced from [Dafont]
+* **Typography:** fonts sourced from [Dafont]
   
   *Harry P*: (https://www.dafont.com](https://www.dafont.com/harry-p.font)
   
   *Happy Halloween*: (https://www.dafont.com/happy-halloween-2.font)
   
-* **Visuals:** * Character portraits and background art curated via [Pinterest](https://www.pinterest.com).
+* **Visuals:** Character portraits and background art curated via [Pinterest](https://www.pinterest.com).
   
-* **Audio:** * Background music sourced from [TikTok](https://www.tiktok.com).
+* **Audio:** Background music sourced from [TikTok](https://www.tiktok.com).
 
   
