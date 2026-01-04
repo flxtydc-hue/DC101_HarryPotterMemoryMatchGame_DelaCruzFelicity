@@ -48,6 +48,8 @@ This project was developed for educational purposes. Below are the sources for t
   *Harry P*: (https://www.dafont.com](https://www.dafont.com/harry-p.font)
   
   *Happy Halloween*: (https://www.dafont.com/happy-halloween-2.font)
+
+  *Coolvetica*: (https://www.dafont.com/coolvetica.font)
   
 * **Visuals:** Character portraits and background art curated via [Pinterest](https://www.pinterest.com).
   
