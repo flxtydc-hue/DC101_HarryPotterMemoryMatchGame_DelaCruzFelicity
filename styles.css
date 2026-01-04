@@ -1,0 +1,552 @@
+/* --- FONTS --- */
+@font-face {
+    font-family: 'Harryp';
+    src: url('font/harryp.TTF') format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'HappyHalloween';
+    src: url('font/HappyHalloween.ttf') format('truetype');
+    font-weight: 400;
+}
+
+/* --- GENERAL RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'HappyHalloween', sans-serif;
+    background: url("img/hogwarts.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+h1 {
+    font-family: 'Harryp', cursive;
+    font-size: 3rem;          
+    letter-spacing: 3px;
+}
+
+h2 {
+    font-family: 'Harryp', cursive;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+}
+
+.instructions h2 {
+    font-size: 2.5rem;       
+}
+
+h3, h4 {
+    font-family: 'HappyHalloween', sans-serif;
+}
+
+body, p, li, span {
+    font-family: 'HappyHalloween', sans-serif;
+}
+
+
+/* --- LAYOUT --- */
+header {
+    position: relative;
+    z-index: 5;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    
+}
+
+.subtitle {
+    color: #f0ead6;
+    margin-top: 5px;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: -1;
+}
+
+
+
+#gameContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* --- BUTTONS --- */
+button {
+    font-family: 'HappyHalloween', sans-serif;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+#main-menu-button {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    font-size: 1.2em;
+}
+
+/* --- GAME BOARD & CARDS --- */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    max-width: 620px;
+    margin: 0 auto;
+    min-height: 420px;
+}
+
+@media (max-width: 600px) {
+    .game-board {
+        grid-template-columns: repeat(3, 1fr);
+        min-height: 360px;
+    }
+}
+
+
+
+.card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-front {
+    background: #65000B;
+    border: 3px solid #FFD700;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #e5d3b3;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;  
+    font-size: 1.5em;
+    border: 2px solid #4E312D;
+}
+
+.main-game-layout {
+    display: flex;
+    flex-direction: row; 
+    gap: 10px;
+    width: 100%;
+    align-items: flex-start;
+    position: relative;
+    margin-bottom: 120px; 
+}
+
+
+.miscast-warning {
+    color: #b30000;
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+#spellbook {
+    position: fixed;
+    bottom: 50px;  
+    right: 20px;
+    z-index: 60;   
+}
+
+
+#spellbook-main-btn {
+    background: #65000B;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#spells-dropdown {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+#spells-dropdown.show {
+    display: flex;
+}
+
+
+.spell-btn {
+    padding: 8px;
+    border: none;
+    background: #eee;
+    cursor: pointer;
+    transition: all 0.25s ease;
+
+}
+
+.spell-btn:active {
+    transform: scale(0.9);
+    box-shadow: 0 0 20px #FFD700;
+}
+
+
+
+#spellbook h3 {
+    font-family: 'Harryp', cursive;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+
+.modal {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 800px) {
+    .main-game-layout {
+        flex-direction: column;
+    }
+}
+.instructions, .menu-content {
+    background-color: #F0EAD6;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    border: 5px solid #4E312D;
+    text-decoration: none;
+}
+
+.instructions ul {
+    text-align: left;
+    margin: 20px 0;
+    line-height: 1.6;
+    list-style: none;
+}
+
+.instructions li::before {
+    content: "⚡ ";
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+
+#victory, #game-over {
+    text-align: center;
+    padding: 40px;
+    background: rgba(0,0,0,0.8);
+    border-radius: 20px;
+    border: 5px solid #FFD700;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;   
+    font-size: 0.7em;
+    color: #777;
+    background: rgba(0,0,0,0.6);
+    z-index: 50;
+}
+
+
+@media (max-width: 600px) {
+    .game-board {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .card {
+        height: 110px;
+    }
+}
+
+/* --- MAGIC CURSOR --- */
+body, button, .card {
+    cursor: pointer; 
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: -1;
+}
+
+#startGameButton {
+    z-index: 10001;
+    position: relative;
+    cursor: pointer;
+}
+
+.harry-glow {
+    color: #FFD700;
+    text-shadow:
+        0 0 5px #FFD700,
+        0 0 10px #FFD700,
+        0 0 20px #FF8C00,
+        0 0 40px rgba(255, 215, 0, 0.8);
+    animation: glowPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes glowPulse {
+    0% { text-shadow: 0 0 5px #FFD700; }
+    50% { text-shadow: 0 0 25px #FF8C00; }
+    100% { text-shadow: 0 0 5px #FFD700; }
+}
+
+.card.matched {
+    animation: matchGlow 0.8s ease forwards;
+    box-shadow:
+        0 0 15px #FFD700,
+        0 0 30px rgba(255, 215, 0, 0.8);
+}
+
+@keyframes matchGlow {
+    0% { transform: rotateY(180deg) scale(1); }
+    50% { transform: rotateY(180deg) scale(1.1); }
+    100% { transform: rotateY(180deg) scale(1.05); }
+}
+
+.card.revelio {
+    animation: revelioPulse 1.5s ease-in-out;
+}
+
+@keyframes revelioPulse {
+    0% { box-shadow: none; }
+    50% { box-shadow: 0 0 25px #8be9fd; }
+    100% { box-shadow: none; }
+}
+
+body.frozen {
+    filter: hue-rotate(180deg) brightness(0.8);
+    transition: filter 0.5s ease;
+}
+
+
+
+@keyframes victoryPop {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+}
+
+.new-record {
+    color: gold;
+    text-shadow: 
+        0 0 10px gold,
+        0 0 20px #FFD700,
+        0 0 30px orange;
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px gold; }
+    to   { text-shadow: 0 0 30px gold; }
+}
+
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: visible; /* 🔹 Important */
+    z-index: 9999;
+    
+}
+
+
+.confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    opacity: 0.9;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+
+#best-time,
+#leaderboard {
+    font-family: 'HappyHalloween', sans-serif;
+    font-size: 0.9em; 
+    color: #FFD700;   
+    text-shadow: 0 0 5px #fff;
+    margin: 5px 0;
+}
+
+#leaderboard p {
+    font-size: 0.8em;
+    margin: 2px 0;
+}
+
+#player-name {
+    font-family: 'Harryp', cursive;   
+    font-size: 1.5rem;              
+    color: #65000B;                  
+    text-align: center;              
+    padding: 10px 15px;             
+    border: 3px solid #FFD700;     
+    border-radius: 12px;              
+    margin-bottom: 20px;             
+    outline: none;                   
+    background-color: #f0e5d3;        
+}
+
+#player-name:focus {
+    border-color: #FF8C00;
+    box-shadow: 0 0 10px #FFD700;
+}
+
+
+#startGameButton {
+    font-family: 'HappyHalloween', sans-serif; 
+    margin-bottom: 20px;                       
+}
+
+.best-time {
+    margin-bottom: 15px;
+}
+
+.dementor-attack {
+    animation: shake 0.5s infinite;
+    filter: grayscale(80%) sepia(20%) brightness(0.8);
+    transition: filter 0.5s ease; 
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px); }
+    50% { transform: translate(-1px, -2px); }
+    100% { transform: translate(1px, 1px); }
+}
+
+#mainMenuModal .instructions {
+    max-width: 400px; 
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mainMenuModal .instructions button {
+    width: 250px;            
+    height: 45px;           
+    margin: 8px 0;          
+    display: flex;           
+    align-items: center;     
+    justify-content: flex-start; 
+    padding: 0 20px;         
+    font-size: 1rem;       
+    gap: 12px;               
+    border-radius: 10px;     
+    background-color: #333;  
+    color: white;
+    border: none;
+}
+
+#mainMenuModal .instructions button i {
+    width: 20px;             
+    text-align: center;
+    font-size: 0.9rem;
+    color: #FFD700;        
+}
+
+#mainMenuModal .instructions button:hover {
+    background-color: #65000B;
+    color: #FFD700;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
