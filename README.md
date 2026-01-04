@@ -39,3 +39,18 @@ How to Play
    4. Beat the 60-second timer to see your name on the Top 5 Leaderboard!
    
 
+References & Assets
+---------------------
+This project was developed for educational purposes. Below are the sources for the assets used:
+
+* **Typography:** * fonts sourced from [Dafont]
+  
+  *Harry P*: (https://www.dafont.com](https://www.dafont.com/harry-p.font)
+  
+  *Happy Halloween*: (https://www.dafont.com/happy-halloween-2.font)
+  
+* **Visuals:** * Character portraits and background art curated via [Pinterest](https://www.pinterest.com).
+  
+* **Audio:** * Background music sourced from [TikTok](https://www.tiktok.com).
+
+  
