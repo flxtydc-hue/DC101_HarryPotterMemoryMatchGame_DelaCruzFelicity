@@ -56,4 +56,4 @@ This project was developed for educational purposes. Below are the sources for t
 * **Audio:** Background music sourced from [TikTok](https://www.tiktok.com).
 
 
-**Live Demo:** [Click here to play the game] (https://flxtydc-hue.github.io/DC101_HarryPotterMemoryMatchGame_DelaCruzFelicity/)
+**Live Demo:** [Click here to play the game](https://flxtydc-hue.github.io/DC101_HarryPotterMemoryMatchGame_DelaCruzFelicity/)
