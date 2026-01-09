@@ -3,7 +3,7 @@ Harry Potter Memory Match Game
 ------------------------------
 A magical, interactive memory-matching game built using vanilla web technologies. Test your concentration by matching pairs of iconic characters before the timer runs out!
 
-⚡ Project Description
+Project Description
 -----------------------
 This project is a dynamic, browser-based game where players enter their names and race against a 60-second clock. The game features a "Spellbook" mechanic that allows players to use limited magical abilities to assist them, and it includes a "Dementor Attack" visual event when the timer reaches a critical level.
 
@@ -32,7 +32,7 @@ How to Play
 ------------------
    1.  **Start the Game:** Enter your name in the start menu and click **"Mischief Managed!"**
    2.  **Match the Cards:** Click on any card to flip it. Find the matching character to clear them from the board.
-   3.  **Beware the Dementor Attack:** Watch out! A **Dementor Attack** can happen—stay focused and clear the board before they drain your time or disrupt your progress.
+   3.  **Dementor Attack:** Be careful! When the timer hits 15 seconds remaining, a Dementor Attack will occur, making the game more challenging as you rush to finish.
    4.  **Use your Spellbook:** If you are running out of time, click the **Spellbook** button. Use them wisely, as you only get **one charge per spell**.
    5.  **Leaderboard:** Beat the **60-second timer** to see your name on the Top 5 Leaderboard!
    
