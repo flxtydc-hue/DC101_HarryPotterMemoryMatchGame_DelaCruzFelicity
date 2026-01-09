@@ -30,13 +30,11 @@ Launching the Game
 
 How to Play
 ------------------
-   1. Enter your name in the start menu and click "Mischief Managed!"
-   
-   2. Click on any card to flip it; find the matching character to clear them from the board.
-   
-   3. Use your Spellbook button if you are running out of time—but use them wisely, as you only get one charge per spell.
-   
-   4. Beat the 60-second timer to see your name on the Top 5 Leaderboard!
+   1.  **Start the Game:** Enter your name in the start menu and click **"Mischief Managed!"**
+   2.  **Match the Cards:** Click on any card to flip it. Find the matching character to clear them from the board.
+   3.  **Beware the Dementor Attack:** Watch out! A **Dementor Attack** can happen—stay focused and clear the board before they drain your time or disrupt your progress.
+   4.  **Use your Spellbook:** If you are running out of time, click the **Spellbook** button. Use them wisely, as you only get **one charge per spell**.
+   5.  **Leaderboard:** Beat the **60-second timer** to see your name on the Top 5 Leaderboard!
    
 
 References & Assets
@@ -58,4 +56,4 @@ This project was developed for educational purposes. Below are the sources for t
 
 Live Demo
 --------------
-[Click here to play the game](https://flxtydc-hue.github.io/DC101_HarryPotterMemoryMatchGame_DelaCruzFelicity/)
+Play the game here: [Harry Potter Memory Match](https://flxtydc-hue.github.io/DC101_HarryPotterMemoryMatchGame_DelaCruzFelicity/)
